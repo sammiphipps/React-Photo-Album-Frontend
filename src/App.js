@@ -57,7 +57,18 @@ class App extends Component {
   }
 
   addPhoto = (newPhoto) => {
-    console.log(newPhoto)
+    newPhoto["album_id"] = this.state.albumShowing
+    fetch(`${localhostapi}/photos`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(newPhoto)
+    }).then(response => response.json())
+      .then(newPhotoInfo => {
+        const newPhotoArray = [...this.state.photos, newPhotoInfo]
+        this.setState({photos: newPhotoArray})
+      }).then(console.log("successfully posted."))
   }
 
   render(){
