@@ -1,0 +1,16 @@
+.rightPage {
+    background-image: url('../images/book-right-page.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width:15rem;
+    height:20rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 3.5rem;
+    padding-left:0.5rem;
+}
+
+.rightPage > img {
+    width: 14rem;
+    height: 10rem;
+}

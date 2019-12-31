@@ -1,0 +1,16 @@
+.albumCard {
+    background-image: url('../images/leather_diary.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    border-top-right-radius: 1.40rem;
+    border-bottom-right-radius: 1.40rem; 
+    height: 15rem;
+    width: 11.5rem;
+}
+
+.albumCard > h3{
+    text-align:center;
+    margin-top: 45%;
+}

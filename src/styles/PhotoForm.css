@@ -1,0 +1,27 @@
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 17rem;
+    margin-top: -1.5rem;
+}
+
+form > fieldset {
+    border: none;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+
+form > fieldset > label {
+    margin-right: 0.5rem;
+}
+
+form > fieldset > input {
+    width: 65%;
+}
+
+form > input[type="submit"] {
+    width: 50%;
+    border-radius: 45%;
+    align-self: center;
+}

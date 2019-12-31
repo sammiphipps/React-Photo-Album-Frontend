@@ -1,0 +1,18 @@
+.photoBook {
+    display: flex;
+    flex-direction: column;
+}
+
+.pages{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photoBookButtons{
+    align-self: center;
+}
+
+.photoBookButtons > button {
+    border-radius: 50%;
+}

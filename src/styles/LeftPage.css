@@ -1,0 +1,16 @@
+.leftPage {
+    background-image: url('../images/book-left-page.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width:15rem;
+    height:20rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 3.5rem;
+    padding-right: 0.5rem;
+}
+
+.leftPage > img {
+    width: 14rem;
+    height: 10rem;
+}
