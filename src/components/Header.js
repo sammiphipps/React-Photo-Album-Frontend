@@ -8,8 +8,8 @@ const Header = ({setShowPhotos}) => {
 
     return(
         <header onClick={handleClick}>
-            <h1>Photo Album</h1>
-            <p>Showcasing Memories to Share Around the World</p>
+            <h1>Image Gallery</h1>
+            <p>Showing Memories to Share</p>
         </header>
     )
 }

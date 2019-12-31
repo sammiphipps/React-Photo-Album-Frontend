@@ -1,3 +1,15 @@
+header {
+  margin-left: 1rem;
+}
+
+header > h1 {
+  margin-bottom: 0;
+}
+
+header > p {
+  margin-top: 0;
+}
+
 main {
   display:flex;
   justify-content: space-around;

@@ -5,7 +5,7 @@ import Header from './components/Header'
 import AlbumContainer from './components/AlbumContainer'
 import PhotoBook from './components/PhotoBook'
 
-const localhostapi = "http://localhost:3000"
+const imageGalleryBackendApi = "http://image-gallery2.herokuapp.com/"
 class App extends Component {
 
   state = {
@@ -18,11 +18,11 @@ class App extends Component {
 
   componentDidMount(){
 
-    fetch(`${localhostapi}/albums`)
+    fetch(`${imageGalleryBackendApi}/albums`)
       .then(response => response.json())
       .then(albums => this.setState({ albums }))
       .then(
-        fetch(`${localhostapi}/photos`)
+        fetch(`${imageGalleryBackendApi}/photos`)
           .then(response => response.json())
           .then(photos => this.setState({ photos }))
       )
@@ -58,7 +58,7 @@ class App extends Component {
 
   addPhoto = (newPhoto) => {
     newPhoto["album_id"] = this.state.albumShowing
-    fetch(`${localhostapi}/photos`, {
+    fetch(`${imageGalleryBackendApi}/photos`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
