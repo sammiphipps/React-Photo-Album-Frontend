@@ -22,7 +22,7 @@ const PhotoBook = ({photos, photoShowing, goToNextPage, goToPreviousPage}) => {
     }
 
     const leftPageFormShow = () => {
-        if(photoShowing[1] === photos.length - 1 && photos[photoShowing[1]] !== undefined){
+        if(photoShowing[0] === photos.length && photos[photoShowing[0]] === undefined){
             return true
         } else {
             return false
@@ -47,13 +47,13 @@ const PhotoBook = ({photos, photoShowing, goToNextPage, goToPreviousPage}) => {
                     key="leftPage" 
                     photo={photos[photoShowing[0]]} 
                     convertDateFunction={convertDate}
-                    // showForm = {leftPageFormShow}
+                    showForm={leftFormShow}
                 />
                 <RightPage 
                     key="rightPage" 
                     photo={photos[photoShowing[1]]} 
                     convertDateFunction={convertDate}
-                    // showForm = {rightPageFormShow}
+                    showForm = {rightFormShow}
                 />
             </div>
             <div className="photoBookButtons">

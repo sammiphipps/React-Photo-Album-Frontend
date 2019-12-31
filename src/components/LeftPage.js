@@ -1,7 +1,8 @@
 import React from 'react'
 import '../styles/LeftPage.css'
+import PhotoForm from './PhotoForm'
 
-const LeftPage = ({photo, convertDateFunction}) => {
+const LeftPage = ({photo, convertDateFunction, showForm}) => {
 
     return(
         (photo !== undefined)
@@ -10,7 +11,9 @@ const LeftPage = ({photo, convertDateFunction}) => {
                 <img src={photo.image_url} alt={photo.title} />
                 <p>Date Taken: {convertDateFunction(photo.date_taken)}</p>
             </div>
-            :<div className="leftPage"></div>
+            :(showForm)
+                ?<div className="leftPage"><PhotoForm /></div>
+                :<div className="leftPage"></div>
     )
 }
 
