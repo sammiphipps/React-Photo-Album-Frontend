@@ -4,7 +4,7 @@ import '../styles/PhotoBook.css'
 import LeftPage from './LeftPage'
 import RightPage from './RightPage'
 
-const PhotoBook = ({photos, photoShowing, goToNextPage, goToPreviousPage}) => {
+const PhotoBook = ({photos, photoShowing, goToNextPage, goToPreviousPage, addPhoto}) => {
     const convertDate = (date) => {
         const dateSplit = date.split("-")
         const year = dateSplit[0]
@@ -48,12 +48,14 @@ const PhotoBook = ({photos, photoShowing, goToNextPage, goToPreviousPage}) => {
                     photo={photos[photoShowing[0]]} 
                     convertDateFunction={convertDate}
                     showForm={leftFormShow}
+                    addPhoto={addPhoto}
                 />
                 <RightPage 
                     key="rightPage" 
                     photo={photos[photoShowing[1]]} 
                     convertDateFunction={convertDate}
                     showForm = {rightFormShow}
+                    addPhoto={addPhoto}
                 />
             </div>
             <div className="photoBookButtons">

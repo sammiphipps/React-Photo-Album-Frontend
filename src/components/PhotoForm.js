@@ -8,17 +8,35 @@ class PhotoForm extends Component {
         date_taken: ''
     }
 
+    handleChange = event => {
+        const newPhoto = {}
+        newPhoto[event.target.name] = event.target.value
+        this.setState(newPhoto)
+    }
+
+    handleSubmit = event => {
+        event.preventDefault()
+        const formData = new FormData(event.target)
+        const newPhoto = {
+            title: formData.get('title'),
+            image_url: formData.get('image_url'),
+            date_taken: formData.get('date_taken')
+        }
+        this.props.addPhoto(newPhoto)
+    }
+
     render(){
         return (
-            <>
-            <h3>Add Photo to Album</h3>
-            <form>
+            <form onSubmit={this.handleSubmit}>
+                <h3>Add Photo to Album</h3>
                 <fieldset>
                     <label htmlFor="title">Photo Title:</label>
                     <input 
                         type="text"
                         name="title"
                         id="title"
+                        value={this.state.title}
+                        onChange={this.handleChange}
                     />
                 </fieldset>
                 <fieldset>
@@ -27,6 +45,8 @@ class PhotoForm extends Component {
                         type="text"
                         name="image_url"
                         id="image_url"
+                        value={this.state.image_url}
+                        onChange={this.handleChange}
                     />
                 </fieldset>
                 <fieldset>
@@ -35,11 +55,12 @@ class PhotoForm extends Component {
                         type="date"
                         name="date_taken"
                         id="date_taken"
+                        value={this.state.date_taken}
+                        onChange={this.handleChange}
                     />
                 </fieldset>
                 <input type="submit" value="Add Photo to Album" />
             </form>
-            </>
         )
     }
 }

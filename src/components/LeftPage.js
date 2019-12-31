@@ -2,7 +2,7 @@ import React from 'react'
 import '../styles/LeftPage.css'
 import PhotoForm from './PhotoForm'
 
-const LeftPage = ({photo, convertDateFunction, showForm}) => {
+const LeftPage = ({photo, convertDateFunction, showForm, addPhoto}) => {
 
     return(
         (photo !== undefined)
@@ -12,7 +12,7 @@ const LeftPage = ({photo, convertDateFunction, showForm}) => {
                 <p>Date Taken: {convertDateFunction(photo.date_taken)}</p>
             </div>
             :(showForm)
-                ?<div className="leftPage"><PhotoForm /></div>
+                ?<div className="leftPage"><PhotoForm addPhoto={addPhoto}/></div>
                 :<div className="leftPage"></div>
     )
 }

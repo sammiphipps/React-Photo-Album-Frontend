@@ -56,6 +56,10 @@ class App extends Component {
     }
   }
 
+  addPhoto = (newPhoto) => {
+    console.log(newPhoto)
+  }
+
   render(){
     return (
       <div className="App">
@@ -73,6 +77,7 @@ class App extends Component {
                 photoShowing={this.state.photoShowing}
                 goToNextPage={this.goToNextPage}
                 goToPreviousPage={this.goToPreviousPage}
+                addPhoto={this.addPhoto}
               /> 
           }
         </main>
